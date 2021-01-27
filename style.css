@@ -1,0 +1,184 @@
+:root {
+    --clr-primary: rgb(148, 152, 158);
+    --clr-secondary: rgba(196, 196, 196, 0.5);
+    --clr-light: rgb(219, 233, 233);
+    --clr-warning: rgba(238, 6, 6, 0.5);
+}
+  
+*, *::before, *::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+  
+#body {
+    margin: 0;
+    font-family: "Varela Round";
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color:  var(--clr-primary);
+}
+
+#application {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#input1 {
+    position: absolute;
+    left: 10%;
+    top: 28%;
+    width: 20%;
+    height: 5%;
+    font-size: 2.65vh;
+    border: none;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    text-align: center;
+    color: gray;
+    transition: 300ms;
+}
+
+#input2 {
+    position: absolute;
+    left: 31%;
+    top: 28%;
+    width: 20%;
+    height: 5%;
+    font-size: 2.65vh;
+    border: none;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    text-align: center;
+    color: gray;
+    transition: 300ms;
+
+}
+
+#arrayVisualization {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    height: 45%;
+    width: 55%;
+    background-color: var(--clr-secondary);
+    font-size: 2.65vh;
+    border-radius: 4px;
+    color: gray;
+}
+
+#sortButton {
+    position: absolute;
+    top: 2%;
+    right: 0.97%;
+    width: 5%;
+    height: 10%;
+    font-size: 4vh;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    border: none;
+    color: gray;
+    transition: 300ms;
+}
+
+#algorithm1 {
+    position: absolute;
+    top: 13%;
+    right: 0.97%;
+    width: 15%;
+    height: 10%;
+    font-size: 3.5vh;
+    text-align: center;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    border: none;
+    color: gray;
+    transition: 300ms;
+}
+
+#algorithm2 {
+    position: absolute;
+    top: 24%;
+    right: 0.97%;
+    width: 15%;
+    height: 10%;
+    font-size: 3.5vh;
+    text-align: center;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    border: none;
+    color: gray;
+    transition: 600ms;
+}
+
+#algorithm3 {
+    position: absolute;
+    top: 35%;
+    right: 0.97%;
+    width: 15%;
+    height: 10%;
+    font-size: 3.5vh;
+    text-align: center;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    border: none;
+    color: gray;
+    transition: 900ms;
+}
+
+#algorithm4 {
+    position: absolute;
+    top: 46%;
+    right: 0.97%;
+    width: 15%;
+    height: 10%;
+    font-size: 3.5vh;
+    text-align: center;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+    border: none;
+    color: gray;
+    transition: 1200ms;
+}
+
+#arrayArea {
+    position: absolute;
+    top: 46%;
+    left: 10%;
+    width: 50%;
+    background: none;
+    color: gray;
+    height: 30%;
+}
+
+#input1:focus {
+    background-color:rgb(102, 151, 151);
+}
+
+#input2:focus {
+    background-color:rgb(102, 151, 151);
+}
+
+#sortButton:hover {
+    background-color:rgb(102, 151, 151);
+}
+
+#algorithm1:hover {
+    background-color:rgb(102, 151, 151);
+}
+
+#algorithm2:hover {
+    background-color:rgb(102, 151, 151);
+}
+
+#algorithm3:hover {
+    background-color:rgb(102, 151, 151);
+}
+
+#algorithm4:hover {
+    background-color:rgb(102, 151, 151);
+}
+
+.algo {
+    opacity: 0;
+}
