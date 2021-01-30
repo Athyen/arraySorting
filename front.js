@@ -36,17 +36,19 @@ window.onload = () => {;
         var val1 = in1.value;
         var newVal1 = parseInt(val1);
         var arr = Array.from(String(newVal1), Number);
-        algo1(arr, 0, arr.length - 1);
+        setTimeout(algo1(arr, 0, arr.length - 1), 5000);
     }
 
     var algo1 = (arr, index, end) => {
-        while (end > index) {
-            var attach = Math.floor((index + end) / 2);
-
-            setTimeout(algo1(arr, index, end), 5000);
-            setTimeout(algo1(arr, attach + 1, end), 5000);
-            setTimeout(algo1Merge(arr, index, middle, end), 5000);
+        if (index < end) {
+            let attach = Math.floor((index + end) / 2);
+            return [
+                setTimeout(algo1(arr, index, attach), 5000),
+                setTimeout(algo1(arr, attach + 1, end), 5000),
+                setTimeout(algo1Merge(arr, index, attach, end), 5000)
+            ]
         }
+        return console.log("ok")
     }
 
     var algo1Merge = (arr, index, attach, end) => {
@@ -54,22 +56,16 @@ window.onload = () => {;
         let rightarrlength = end - attach;
         let rightarr = [];
         let leftarr = [];
-        for (let i = 0; i < leftArrayLength; ++i)
-          leftArray[i] = array[start + i];
-        for (let i = 0; i < rightArrayLength; ++i)
-          rightArray[i] = array[middle + 1 + i];
+        for (let i = 0; i < leftarrlength; ++i)
+          leftarr[i] = arr[index + i];
+        for (let i = 0; i < rightarrlength; ++i)
+          rightarr[i] = arr[attach + 1 + i];
         let leftindex = 0, rightindex = 0;
-        let currentindex = index;;
-        while (leftindex < leftarrlength && rightindex < rightarrlength) {
-          if (leftarr[leftindex] <= rightarr[rightindex])
-            arr[currentindex] = leftarr[leftindex++];
-          else
-            arr[currentindex] = rightarr[rightindex++]
-          currentindex++;
-        }
+        let currentindex = index;
+        console.log(leftarr, rightarr);
         while (leftindex < leftarrlength) arr[currentindex++] = leftarr[leftindex++]
         while (rightindex < rightarrlength) arr[currentindex++] = rightarr[rightindex++]
-        aA.innerHTML = arr;
+        console.log(leftarr, rightarr);
     }
 
     var getArray1 = () => {
@@ -83,3 +79,4 @@ window.onload = () => {;
     dropdown();
     merge();
 }
+
