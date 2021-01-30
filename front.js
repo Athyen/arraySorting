@@ -39,33 +39,32 @@ window.onload = () => {;
         setTimeout(algo1(arr, 0, arr.length - 1), 5000);
     }
 
-    var algo1 = (arr, index, end) => {
-        if (index < end) {
-            let attach = Math.floor((index + end) / 2);
-            return [
-                setTimeout(algo1(arr, index, attach), 5000),
-                setTimeout(algo1(arr, attach + 1, end), 5000),
-                setTimeout(algo1Merge(arr, index, attach, end), 5000)
-            ]
-        }
-        return console.log("ok")
+    const algo1 = (arr, index, end) => {
+      if (index < end) {
+        const attach = Math.floor((index + end) / 2);
+        setTimeout(algo1(arr, index, attach), 5000);
+        setTimeout(algo1(arr, attach + 1, end), 5000);
+        setTimeout(algo1Merge(arr, index, attach, end), 5000);
+      }
+      return 0;
     }
 
-    var algo1Merge = (arr, index, attach, end) => {
-        let leftarrlength = attach - index + 1
-        let rightarrlength = end - attach;
-        let rightarr = [];
-        let leftarr = [];
-        for (let i = 0; i < leftarrlength; ++i)
-          leftarr[i] = arr[index + i];
-        for (let i = 0; i < rightarrlength; ++i)
-          rightarr[i] = arr[attach + 1 + i];
-        let leftindex = 0, rightindex = 0;
-        let currentindex = index;
-        console.log(leftarr, rightarr);
-        while (leftindex < leftarrlength) arr[currentindex++] = leftarr[leftindex++]
-        while (rightindex < rightarrlength) arr[currentindex++] = rightarr[rightindex++]
-        console.log(leftarr, rightarr);
+    const algo1Merge = (arr, index, attach, end) => {
+      const leftarrlength = attach - index + 1;
+      const rightarrlength = end - attach;
+      const rightarr = [];
+      const leftarr = [];
+      for (let i = 0; i < leftarrlength; ++i)
+        leftarr[i] = arr[index + i];
+      for (let i = 0; i < rightarrlength; ++i)
+        rightarr[i] = arr[attach + 1 + i];
+      while (leftarr.length && rightarr.length) {
+        if (leftarr[0] < rightarr[0]) arr[index] = leftarr.shift();
+        else arr[index] = rightarr.shift();
+        index++;
+      }
+      arr.splice(index, [...leftarr, ...rightarr].length, ...[...leftarr, ...rightarr]);
+      console.log(arr)
     }
 
     var getArray1 = () => {
